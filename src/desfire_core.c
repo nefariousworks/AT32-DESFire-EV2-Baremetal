@@ -1,6 +1,6 @@
 #include "desfire_core.h"
-// Include your byte-oriented AES library here (e.g., kokke/tiny-AES-c)
-// #include "aes.h" 
+// Include your byte-oriented AES library here (e.g., kokke/tiny-AES-c), I used https://github.com/openluopworld/aes_128/tree/master
+#include "aes.h" 
 
 // --- Global Cryptographic State ---
 uint8_t session_key[16] = {0};
