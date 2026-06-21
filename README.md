@@ -31,7 +31,7 @@ This driver requires a 12 MHz external clock configuration (`F_CPU 12000000UL`).
 To compile and run this code, your environment must include:
 1. **Atmel Studio Framework (ASF):** The examples rely on ASF for USART serial communication (`usart_write_line()`) to output status messages and debug data. You must initialize USART for your specific board prior to running the main execution loops.
 2. **AES Cryptography:** The cryptographic core utilizes the byte-oriented AES-128 library by [openluopworld](https://github.com/openluopworld/aes_128). 
-   * *Note:* The original openluopworld library operates in CTR mode. Custom wrappers (`DESFire_CBC_Decrypt` and `DESFire_CBC_Encrypt`) were implemented within `src/desfire_core.c` to support the strict **CBC (Cipher Block Chaining)** mode required by the DESFire EV2 Mutual Authentication protocol.
+   * *Note:* The original openluopworld library does not natively support CBC (Cipher Block Chaining) mode. Custom wrappers (`DESFire_CBC_Decrypt` and `DESFire_CBC_Encrypt`) were implemented within `src/desfire_core.c` to support the strict **CBC (Cipher Block Chaining)** mode required by the DESFire EV2 Mutual Authentication protocol.
 
 ## Usage & Compilation
 To test a specific milestone:
